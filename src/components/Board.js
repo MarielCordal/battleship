@@ -15,6 +15,7 @@ export  class Board extends Component {
         playing: false,
     }
     this.availablePos = 0;
+    
     this.showRotation = true;
  }
 
