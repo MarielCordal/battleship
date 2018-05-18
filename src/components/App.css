@@ -1,0 +1,56 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: sans-serif; */
+}
+
+.Board {
+  display: inline-flex;
+  width: 100%;
+}
+.board {
+  width: 50%;
+}
+.restartButton{
+  padding: 1%
+}
+.cell{
+  height: 45px;
+  width: 45px;
+  color: white;
+  margin: 2px;
+  border: 2px solid black;
+}
+
+  table {
+    padding: 0px;
+    margin: 0px;
+    border: 1px;
+   margin: 0 auto;
+  }
+
+  tr {
+  height: 30px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  td {
+    padding: 0px;
+    margin: 0px;
+    width: 30px;
+    border: 1px;
+    border-style: solid;
+  }
+
+  .hit {background-color: red}
+  .empty {background-color:white}
+  .water {background-color: steelblue}
+  .destroyed {background-color: orange}
+  .ship {background-color: green}
+  .hidden {background-color: white}
+
+  .bold{font-weight: bold}
+
+
