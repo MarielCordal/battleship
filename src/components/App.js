@@ -153,7 +153,7 @@ class App extends Component {
         let { gameView } = this.state;
         gameView++;
         this.setState({ gameView })
-        winCpu ? this.winner = 'The winner is CPU' : this.winner = 'The winner is User'
+        winCpu ? this.winner = 'The winner is CPU' : this.winner = 'The winner is Mariel'
     }
     calculateHit = (position, isCpu) => {
         let cpugridtomatch
