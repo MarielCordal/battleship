@@ -43,7 +43,7 @@ class App extends Component {
             return prevState;
         });
     }
-    
+
     createPositionAvaliablesToShot(){
         let positionsAvaliables = new Array(100).fill(null);
         let posx=0
@@ -107,11 +107,11 @@ class App extends Component {
         ship3.push([1,6])
         ship3.push([1,7])
         ship3.push([1,8])
-        
+
         ship4.push([1,2])
         ship4.push([2,2])
         ship4.push([3,2])
-        
+
         ship5.push([7,8])
         ship5.push([8,8])
 
@@ -228,20 +228,25 @@ class App extends Component {
         }
     }
     handleClickInUser = (position) => {
-        this.changeStatusUserGrid(position);
+      setTimeout(() => {
+            this.changeStatusUserGrid(position);
+        }, 1000);
+
         let { cpuTurn } = this.state;
         cpuTurn = false
         this.setState({ cpuTurn })
+
     }
 
     handleClickInCPU = (position) => {
         this.changeStatusCPUGrid(position);
-        this.setState((prevState) => {
-            prevState.cpuTurn = true;
-            return prevState;
-        }, () => {
-            this.handleClickInUser(this.random());
-        });
+          this.setState((prevState) => {
+              prevState.cpuTurn = true;
+              return prevState;
+          }, () => {
+              this.handleClickInUser(this.random());
+          });
+
     }
     random = () => {
 
@@ -313,15 +318,15 @@ class App extends Component {
         if (this.state.gameView === 2) {
             turn = this.state.cpuTurn ? <span><h2>Playing: CPU</h2></span> : <span><h2>Playing: User</h2></span>
         }
-        let start = this.state.showStart && <button onClick={this.changeStage}>Start Game</button>
+        let start = this.state.showStart && <button onClick={this.changeStage} className="buttons">Start Game</button>
         let userView = this.state.gameView !== 3 && userBoard;
         let CPUView = this.state.gameView === 2 && CPUBoard;
         let winnerView = this.state.gameView === 3 && <div><h2>{this.winner}</h2></div>
-        let restartButton = this.state.gameView === 3 && <div className="restartButton"><button onClick={this.setInitialStates}>RESTART GAME</button></div>
+        let restartButton = this.state.gameView === 3 && <div className="restartButton"><button onClick={this.setInitialStates} className="buttons">RESTART GAME</button></div>
 
         return (
             <div className="App">
-                {turn}
+                {/*{turn}*/}
                 <div className="Board">
                     {userView}
                     {CPUView}

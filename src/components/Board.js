@@ -15,7 +15,7 @@ export  class Board extends Component {
         playing: false,
     }
     this.availablePos = 0;
-    
+
     this.showRotation = true;
  }
 
@@ -136,9 +136,9 @@ export  class Board extends Component {
                 {
                     row.map((cell, posX) => {
                         position = {x:posX, y:posY};
-                        return <Cell cellState={grid[posX][posY].status} 
-                            paintCell={this.paintCell} 
-                            key={`${posX}-${posY}`} 
+                        return <Cell cellState={grid[posX][posY].status}
+                            paintCell={this.paintCell}
+                            key={`${posX}-${posY}`}
                             position={position} />
                     })
                 }
@@ -146,8 +146,8 @@ export  class Board extends Component {
         })
         let title = isCpu ? <span><h2>CPU Board</h2></span> : <span><h2>Mariel Board</h2></span>
         let labelShip = this.props.gameView === 1 && <span><h3>{this.state.shipsAvailables[this.availablePos] ? 'Place ship of '  + this.state.shipsAvailables[this.availablePos] + ' spaces' : 'No more ships to place '}</h3></span>
-        const labelRotation = this.props.gameView === 1 && <button onClick={this.toggle}>{this.state.vertical ? 'change to horizontal' : 'change to vertical'}</button>
-        let rotationButton = this.showRotation && labelRotation 
+        const labelRotation = this.props.gameView === 1 && <button onClick={this.toggle} className="buttons">{this.state.vertical ? 'change to horizontal' : 'change to vertical'}</button>
+        let rotationButton = this.showRotation && labelRotation
 
         return (
             <div className="board">

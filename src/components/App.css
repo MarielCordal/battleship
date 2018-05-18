@@ -13,7 +13,12 @@ body {
   width: 50%;
 }
 .restartButton{
-  padding: 1%
+  padding-top: 18px;
+  padding: 2%;
+  font-size: 18px;
+}
+.buttons{
+  font-size: 18px;
 }
 .cell{
   height: 45px;
@@ -52,5 +57,3 @@ body {
   .hidden {background-color: white}
 
   .bold{font-weight: bold}
-
-
